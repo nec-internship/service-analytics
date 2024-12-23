@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "aws-analytics"
+version = "0.1.0"
+description = "Analytics Tool with AWS integration"
+authors = ["Nguyen K.B Khanh"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.13"
+boto3 = "^1.35.80"
+python-dotenv = "^1.0.1"
+gunicorn = "^23.0.0"
+flask-cors = "^5.0.0"
+flask = "^3.1.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
