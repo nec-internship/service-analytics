@@ -2,9 +2,10 @@ from flask import Flask
 from flask_cors import *
 from .env import Env
 from ..classes.route_class import Route
+from typing import List
 
 class App:
-    def __init__(self, env: Env, routes: list[tuple[Route, any]] = None):
+    def __init__(self, env: Env, routes: List[tuple[Route, any]] = None):
         self.env = env
         self.app = Flask(env.config.flask.name)
         self.__setup_routes__(routes) 
@@ -16,7 +17,7 @@ class App:
     def __setup_cors__(self):
         CORS(self.app)
         
-    def __setup_routes__(self, routes: list[tuple[Route, any]]):
+    def __setup_routes__(self, routes: List[tuple[Route, any]]):
         for route in routes: 
             setattr(App, route[0].name, route[1])
             self.app.add_url_rule(route[0].path, route[0].name, getattr(self, route[0].name), methods=route[0].method)
