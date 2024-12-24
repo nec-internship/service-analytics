@@ -1,4 +1,5 @@
 from classes.route_class import Route
+
 METHOD_HEAD = ['HEAD']
 METHOD_GET = ['GET']
 METHOD_POST = ['POST']
@@ -9,5 +10,11 @@ METHOD_PATCH = ['PATCH']
 ROUTE_PING = Route(
     name='ping',
     path='/ping',
+    method=METHOD_GET
+)
+
+ROUTE_HEALTHCHECK = Route(
+    name='healthcheck',
+    path='/healthcheck',
     method=METHOD_GET
 )
