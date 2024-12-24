@@ -6,7 +6,7 @@ authors = ["Nguyen K.B Khanh"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.13"
+python = "^3.10"
 boto3 = "^1.35.80"
 python-dotenv = "^1.0.1"
 gunicorn = "^23.0.0"
