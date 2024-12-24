@@ -1,0 +1,21 @@
+---
+version: '3.9'
+services: 
+  model_service:
+    image: nec-service-analytics
+    restart: always
+    container_name: nec-sa
+    # healthcheck:
+    #   test: [ "CMD", "wget", "--quiet", "--tries=1", "--spider", "http://model_service:5010/ping" ]
+    #   interval: 15s
+    #   retries: 5
+    env_file:
+      - .env
+    volumes:
+      - ./src:/app/src
+      - ./run:/app/run
+    network_mode: "host"
+
+networks:
+  nec-network:
+    driver: bridge
