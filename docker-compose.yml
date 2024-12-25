@@ -2,7 +2,7 @@
 version: '3.9'
 services: 
   model_service:
-    image: nec-service-analytics
+    image: nec-internship/service-analytics:latest
     restart: always
     container_name: nec-sa
     # healthcheck:
